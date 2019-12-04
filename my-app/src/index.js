@@ -54,11 +54,29 @@ class App extends React.Component {
         <div className='App'>
             <h1> Git Hub User Card</h1>
             <div className='users'>
+            {
+                //this UserCardStyle represents your card
+                //below it, we will reuse the same component but pass it different data
+                //we will take the array of follower objects [{...}, {...}, etc]
+                //map over it, and in the map callback function we will pass the same props (image and name) to a UserCardStyle component
+            }
              <UserCardStyle
               image={this.state.users.avatar_url}
               name={this.state.users.name}
+              bio={this.state.users.bio}
              />
             </div>
+            {
+                this.state.followers.map(follower => {
+                    return (
+                        <UserCardStyle 
+                        image={follower.avatar_url}
+                        name={follower.name}
+                        bio={follower.bio}
+                        />
+                    )
+                })
+            }
         </div>
         );
     }

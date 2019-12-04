@@ -21,29 +21,26 @@ export default function UserCardStyle(props) {
   const classes = useStyles();
 //if using existing components, carefully look at your data to see which parts map to the props you can use
 // image would be props.avatar_url
-//title could be props.name
+
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
           image={props.image}
-          title={props.name}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {props.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Coders are a widespread group of rare mammals, with over 500 species, ranging
-            across all continents except Antarctica. This statement is defintely not factual. 
+          title={props.name}
+          bio={props.bio}
+            
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
         <Button size="small" color="primary">
           Learn More
         </Button>
